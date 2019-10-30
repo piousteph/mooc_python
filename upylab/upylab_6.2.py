@@ -1,7 +1,17 @@
 def top_3_candidats(moyennes):
     res = ()
+    tmp = []
 
-    print(moyennes.sort())
+    for c in moyennes:
+        tmp.append(moyennes[c])
+
+    tmp.sort(reverse=True)
+
+    for i in range(3):
+        for c in moyennes:
+            if tmp[i] == moyennes[c]:
+                res += (c,)
+                break
     return res
 
 print(top_3_candidats({'Candidat 7': 2, 'Candidat 2': 38, 'Candidat 6': 85,
