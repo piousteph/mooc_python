@@ -4,15 +4,20 @@ secret = random.randint(0, 100)
 
 essai = 0
 reponse = -1
-
-while essai != 6 and reponse != secret:
+win = False
+while essai < 6:
     essai += 1
     i = int(input())
-    if i < secret:
-        print("Trop petit")
-    elif i > secret:
-        print("Trop grand")
-    else:
+    if i == secret:
         print("Gagné en", essai, "essais !")
-if (essai == 6):
+        win = True
+        break
+    if essai < 6:
+        if i < secret:
+            print("Trop petit")
+        else:
+            print("Trop grand")
+
+if win == False:
     print("Perdu ! Le secret était", secret)
+

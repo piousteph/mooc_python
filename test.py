@@ -1,11 +1,13 @@
-d = {}
-b = 4.5
+def anagramme_list(a,b):
+    res = False
+    if len(a) == len(b):
+        liste_b = list(b)
+        res = True
+        for i in a:
+            if i in liste_b:
+                liste_b.remove(i)
+            else:
+                res = False
+    return res
 
-d[1] = 22
-d[3.14] = 24
-d[b] = 90
-d['b'] = 25
-# d[(1,2)]'X'
-# d[[3,4]] = 32
-d[2] = (3,4)
-d[5,4] = [5,4]
+print(anagramme_list('ab', 'bab'))
